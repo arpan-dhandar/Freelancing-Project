@@ -1,3 +1,4 @@
+import  FinalCTA  from "./components/FinalCTA";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import WorkListing from "./components/WorkListing";
@@ -8,6 +9,7 @@ const App = () => {
       <Header />
       <Hero />
       <WorkListing />
+      <FinalCTA />
     </div>
   );
 };
