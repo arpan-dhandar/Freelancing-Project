@@ -20,7 +20,7 @@ export default function FinalCTA() {
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
 
-          {/* Floating Sparkles */}
+          {/*Floating Sparkles - Poppy elements */}
           <motion.div
             className="absolute top-10 right-20"
             animate={{ y: [0, -20, 0], rotate: [0, 180, 360] }}
