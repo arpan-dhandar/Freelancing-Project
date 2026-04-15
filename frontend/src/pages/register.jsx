@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import upload from "../utils/upload.js";
-import newRequest from "..//utils/newRequest.js";
+import newRequest from "../utils/newRequest.js";
 import { useNavigate } from "react-router-dom";
 
 function Register() {
@@ -46,16 +46,21 @@ function Register() {
 
   // Reusable Tailwind classes to match your SCSS
   const labelStyle = "text-gray-500 text-[18px]";
-  const inputStyle = "p-5 border border-[rgb(216,214,214)] outline-none rounded-sm";
+  const inputStyle =
+    "p-5 border border-[rgb(216,214,214)] outline-none rounded-sm";
 
   return (
     <div className="flex items-center justify-center">
-      <form onSubmit={handleSubmit} className="w-[960px] py-[100px] px-0 flex gap-[120px]">
-        
+      <form
+        onSubmit={handleSubmit}
+        className="w-[960px] py-[100px] px-0 flex gap-[120px]"
+      >
         {/* LEFT SECTION */}
         <div className="flex-1 flex flex-col gap-[10px] justify-between">
-          <h1 className="text-gray-500 mb-5 text-3xl font-bold">Create a new account</h1>
-          
+          <h1 className="text-gray-500 mb-5 text-3xl font-bold">
+            Create a new account
+          </h1>
+
           <label className={labelStyle}>Username</label>
           <input
             className={inputStyle}
@@ -64,7 +69,7 @@ function Register() {
             placeholder="johndoe"
             onChange={handleChange}
           />
-          
+
           <label className={labelStyle}>Email</label>
           <input
             className={inputStyle}
@@ -73,13 +78,22 @@ function Register() {
             placeholder="email"
             onChange={handleChange}
           />
-          
+
           <label className={labelStyle}>Password</label>
-          <input className={inputStyle} name="password" type="password" onChange={handleChange} />
-          
+          <input
+            className={inputStyle}
+            name="password"
+            type="password"
+            onChange={handleChange}
+          />
+
           <label className={labelStyle}>Profile Picture</label>
-          <input type="file" className="p-2" onChange={(e) => setFile(e.target.files[0])} />
-          
+          <input
+            type="file"
+            className="p-2"
+            onChange={(e) => setFile(e.target.files[0])}
+          />
+
           <label className={labelStyle}>Country</label>
           <input
             className={inputStyle}
@@ -88,8 +102,8 @@ function Register() {
             placeholder="Usa"
             onChange={handleChange}
           />
-          
-          <button 
+
+          <button
             type="submit"
             className="border-none p-5 text-white font-medium text-[18px] bg-[#1dbf73] cursor-pointer hover:bg-[#19a463] transition-colors mt-4"
           >
@@ -99,20 +113,23 @@ function Register() {
 
         {/* RIGHT SECTION */}
         <div className="flex-1 flex flex-col gap-[10px] justify-between">
-          <h1 className="text-gray-500 mb-5 text-3xl font-bold">I want to become a seller</h1>
-          
+          <h1 className="text-gray-500 mb-5 text-3xl font-bold">
+            I want to become a seller
+          </h1>
+
           <div className="flex items-center gap-[10px]">
             <label className={labelStyle}>Activate the seller account</label>
             <label className="relative inline-block w-[50px] h-6">
-              <input 
-                type="checkbox" 
-                className="opacity-0 w-0 h-0 peer" 
-                onChange={handleSeller} 
+              <input
+                type="checkbox"
+                className="opacity-0 w-0 h-0 peer"
+                onChange={handleSeller}
               />
-              <span className="absolute cursor-pointer inset-0 bg-[#ccc] transition-all duration-300 rounded-[24px] 
+              <span
+                className="absolute cursor-pointer inset-0 bg-[#ccc] transition-all duration-300 rounded-[24px] 
                 before:absolute before:content-[''] before:h-4 before:w-4 before:left-1 before:bottom-1 before:bg-white before:transition-all before:duration-300 before:rounded-full
-                peer-checked:bg-[#2196f3] peer-checked:before:translate-x-[26px] peer-focus:shadow-[0_0_1px_#2196f3]">
-              </span>
+                peer-checked:bg-[#2196f3] peer-checked:before:translate-x-[26px] peer-focus:shadow-[0_0_1px_#2196f3]"
+              ></span>
             </label>
           </div>
 
@@ -124,7 +141,7 @@ function Register() {
             placeholder="+1 234 567 89"
             onChange={handleChange}
           />
-          
+
           <label className={labelStyle}>Description</label>
           <textarea
             className={inputStyle}
