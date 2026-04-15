@@ -1,12 +1,17 @@
-// import express from "express";
-// import { verifyToken } from "../middleware/jwt.middleware.js";
-// import { getOrders, intent, confirm } from "../controllers/order.controller.js";
+import express from "express";
+import { verifyToken } from "../middleware/jwt.middleware.js";
+// Changed 'intent' to 'dummyIntent' to match your controller
+import { getOrders, dummyIntent, confirm } from "../controllers/order.controller.js";
 
-// const router = express.Router();
+const router = express.Router();
 
-// // router.post("/:gigId", verifyToken, createOrder);
-// router.get("/", verifyToken, getOrders);
-// router.post("/create-payment-intent/:id", verifyToken, intent);
-// router.put("/", verifyToken, confirm);
+// Get all orders for the user
+router.get("/", verifyToken, getOrders);
 
-// export default router;
+// Create the mock payment intent (using the Gig ID)
+router.post("/create-payment-intent/:id", verifyToken, dummyIntent);
+
+// Confirm the order status
+router.put("/", verifyToken, confirm);
+
+export default router;
