@@ -42,8 +42,8 @@ function Footer() {
             <h2 className="text-[16px] text-[#555] font-semibold">Support</h2>
             <span className="font-light">Help & Support</span>
             <span className="font-light">Trust & Safety</span>
-            <span className="font-light">Selling on Fiverr</span>
-            <span className="font-light">Buying on Fiverr</span>
+            <span className="font-light">Selling on Scarr</span>
+            <span className="font-light">Buying on Scarr</span>
           </div>
 
           <div className="flex flex-col gap-[20px]">
@@ -61,16 +61,16 @@ function Footer() {
             <span className="font-light">Community Standards</span>
           </div>
 
-          <div className="flex flex-col gap-[20px]">
-            <h2 className="text-[16px] text-[#555] font-semibold">More From Fiverr</h2>
-            <span className="font-light">Fiverr Business</span>
-            <span className="font-light">Fiverr Pro</span>
-            <span className="font-light">Fiverr Logo Maker</span>
-            <span className="font-light">Fiverr Guides</span>
+          <div className="flex flex-col gap-[20px]">L
+            <h2 className="text-[16px] text-[#555] font-semibold">More From Scarr</h2>
+            <span className="font-light">Scarr Business</span>
+            <span className="font-light">Scarr Pro</span>
+            <span className="font-light">Scarr Logo Maker</span>
+            <span className="font-light">Scarr Guides</span>
             <span className="font-light">Get Inspired</span>
-            <span className="font-light">Fiverr Select</span>
+            <span className="font-light">Scarr Select</span>
             <span className="font-light">ClearVoice</span>
-            <span className="font-light">Fiverr Workspace</span>
+            <span className="font-light">Scarr Workspace</span>
             <span className="font-light">Learn</span>
             <span className="font-light">Working Not Working</span>
           </div>
@@ -84,9 +84,9 @@ function Footer() {
           
           {/* Left Side: .left */}
           <div className="w-max flex items-center gap-[20px]">
-            <h2 className="text-[20px] font-bold text-[#555]">fiverr</h2>
+            <h2 className="text-[20px] font-bold text-[#555]">Scarr</h2>
             <span className="text-[13px] whitespace-nowrap">
-              © Fiverr International Ltd. 2023
+              © Scarr International Ltd. 2023
             </span>
           </div>
 

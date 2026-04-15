@@ -47,7 +47,7 @@ function Navbar() {
         {/* Logo Section */}
         <div className="text-[34px] font-bold tracking-tight">
           <Link to="/" className="text-inherit no-underline">
-            <span>fiverr</span>
+            <span>Scarr</span>
           </Link>
           <span className="text-[#1dbf73]">.</span>
         </div>
