@@ -1,1 +1,124 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --canvas:    #FAFAFA;
+  --ink:       #111111;
+  --ink-muted: #6B6B6B;
+  --red:       #FF2D2D;
+  --red-light: #FFE8E8;
+  --border:    #E4E4E4;
+  --surface:   #FFFFFF;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--canvas);
+  color: var(--ink);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: var(--canvas); }
+::-webkit-scrollbar-thumb { background: #D0D0D0; border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: var(--red); }
+::selection { background: var(--red-light); color: var(--ink); }
+
+/* ── Layout ───────────────────────────────────────────── */
+.page-container { @apply max-w-7xl mx-auto px-5 lg:px-10; }
+
+/* ── Buttons ──────────────────────────────────────────── */
+.btn-red {
+  @apply inline-flex items-center justify-center gap-2
+    bg-scarr-red text-white font-sans font-600 text-sm
+    px-6 py-3 rounded-pill
+    transition-all duration-200
+    hover:-translate-y-0.5 hover:shadow-btn-red active:translate-y-0;
+}
+.btn-outline {
+  @apply inline-flex items-center justify-center gap-2
+    border border-border bg-surface text-ink font-sans font-500 text-sm
+    px-6 py-3 rounded-pill
+    transition-all duration-200
+    hover:border-ink hover:shadow-pop-sm active:translate-y-px;
+}
+.btn-ghost {
+  @apply inline-flex items-center justify-center gap-2
+    text-ink-muted font-sans font-500 text-sm
+    px-4 py-2 rounded-pill
+    transition-all duration-200 hover:bg-surface-2 hover:text-ink;
+}
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2
+    bg-ink text-white font-sans font-600 text-sm
+    px-6 py-3 rounded-pill
+    transition-all duration-200
+    hover:-translate-y-0.5 hover:shadow-card-hover active:translate-y-0;
+}
+
+/* ── Cards ────────────────────────────────────────────── */
+.card {
+  @apply bg-surface rounded-2xl border border-border shadow-card
+    transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover;
+}
+
+/* ── Inputs ───────────────────────────────────────────── */
+.scarr-input {
+  @apply w-full bg-surface border border-border rounded-xl
+    px-4 py-3 text-sm text-ink placeholder-ink-faint
+    focus:outline-none focus:border-ink focus:ring-2 focus:ring-ink/10
+    transition-all duration-200;
+}
+.scarr-label {
+  @apply block text-xs font-sans font-600 text-ink-muted uppercase tracking-widest mb-1.5;
+}
+
+/* ── Tags ─────────────────────────────────────────────── */
+.tag     { @apply inline-flex items-center gap-1 px-3 py-1 rounded-pill text-xs font-sans font-500 bg-surface-2 text-ink-muted border border-border; }
+.tag-red { @apply inline-flex items-center gap-1 px-3 py-1 rounded-pill text-xs font-sans font-600 bg-scarr-red-light text-scarr-red; }
+
+/* ── Marquee ──────────────────────────────────────────── */
+.marquee-outer {
+  overflow: hidden;
+  position: relative;
+}
+.marquee-outer::before, .marquee-outer::after {
+  content: ''; position: absolute; top: 0; bottom: 0; width: 80px; z-index: 10; pointer-events: none;
+}
+.marquee-outer::before { left: 0;  background: linear-gradient(to right, var(--canvas), transparent); }
+.marquee-outer::after  { right: 0; background: linear-gradient(to left,  var(--canvas), transparent); }
+.marquee-track { display: flex; width: max-content; }
+.marquee-track.forward  { animation: marquee     28s linear infinite; }
+.marquee-track.reverse  { animation: marquee-rev 32s linear infinite; }
+.marquee-track:hover    { animation-play-state: paused; }
+
+/* ── Skeleton ─────────────────────────────────────────── */
+.skeleton {
+  background: linear-gradient(90deg, #EBEBEB 25%, #F5F5F5 50%, #EBEBEB 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s infinite;
+  border-radius: 8px;
+}
+
+/* ── Section eyebrow ──────────────────────────────────── */
+.section-eyebrow {
+  @apply inline-flex items-center gap-2 text-xs font-sans font-600
+    text-scarr-red uppercase tracking-widest mb-3;
+}
+
+/* ── Noise overlay ────────────────────────────────────── */
+.noise-overlay::after {
+  content: ''; position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  pointer-events: none; border-radius: inherit;
+}
+
+*:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button { -webkit-appearance: none; }

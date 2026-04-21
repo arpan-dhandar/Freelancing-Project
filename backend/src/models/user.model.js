@@ -1,53 +1,23 @@
 import mongoose, { Schema } from "mongoose";
-import bcrypt from "bcrypt"
+import bcrypt from "bcrypt";
 
-const userSchema = new Schema({
-  username: {
-    type: String,
-    required: true,
-    unique: true,
+const userSchema = new Schema(
+  {
+    username:     { type: String, required: true, unique: true },
+    email:        { type: String, required: true, unique: true },
+    password:     { type: String, required: true },
+    img:          { type: String, default: "" },
+    country:      { type: String, required: true },
+    phone:        { type: String, default: "" },
+    desc:         { type: String, default: "" },
+    isSeller:     { type: Boolean, default: false },
+    refreshToken: { type: String, default: "" },
   },
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-  },
-  password: {
-    type: String,
-    required: true,
-  },
-  img: {
-    type: String,
-    required: false,
-  },
-  country: {
-    type: String,
-    required: true,
-  },
-  phone: {
-    type: String,
-    required: false,
-  },
-  desc: {
-    type: String,
-    required: false,
-  },
-  isSeller: {
-    type: Boolean,
-    default:false
-  },
-},{
-  timestamps:true
-});
-
-userSchema.pre("save", async function (next) {
-    if(!this.isModified("password")) return next();
-
-    this.password = await bcrypt.hash(this.password, 10)
-})
+  { timestamps: true }
+);
 
 userSchema.methods.isPasswordCorrect = async function (password) {
-   return await bcrypt.compare(password, this.password)
-}
+  return await bcrypt.compare(password, this.password);
+};
 
-export default mongoose.model("User", userSchema)
+export default mongoose.model("User", userSchema);
