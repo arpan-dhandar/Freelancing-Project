@@ -1,0 +1,27 @@
+GitHub Repo = https://github.com/arpan-dhandar/Freelancing-Project
+
+
+
+
+.env for backend
+
+PORT=8000
+
+MONGODB_URI=mongodb+srv://test_user:9dM4maRQUUt8SXwX@freelancing-cluster.6pbhzc6.mongodb.net/freelancing
+
+CORS_ORIGIN=http://localhost:5173
+
+CLOUDINARY_CLOUD_NAME=Freelancing-project	
+CLOUDINARY_API_KEY=832357986317118
+CLOUDINARY_API_SECRET=COSTd-6adoevr5RhooPjdMIQ8FY
+
+JWT_SECRET=37ce047f402ce81196d2f3ec12b6baf4a144211d26325e49ca42cb635dd59fb6
+
+
+ACCESS_TOKEN_SECRET=4d764b909ac72a984f245e768a6581edd902c34e28c4bdb0df732d4ad4f53a2e4a683d78cac4df893c0042922b43478dd48cbef5abfb2d9988a090f8eeb32cb8
+ACCESS_TOKEN_EXPIRY=15m
+
+REFRESH_TOKEN_SECRET=ae265cf1dcf55048d573725d43a23cf9ca108e1aa8d097f988bacd0c4062c0cf0be9c0315da65439617aa29ff65c76ab57835b9e18e62758338f40e55e0f84ce
+REFRESH_TOKEN_EXPIRY=1d
+
+NODE_ENV=development
