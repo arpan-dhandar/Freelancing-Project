@@ -5,8 +5,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "  ",
-    "dev": "nodemon src/index.js"
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "seed": "node seed.js",
+    "backend": "node seed.js && npm run dev"
   },
   "author": "Arpan Dhandar",
   "license": "ISC",
